@@ -1,8 +1,13 @@
-import GoodsModel from './models/GoodsModel';
+import {goodsModel} from "../models/GoodsModel.js";
+
 
 class GoodsController {
     async create(req, res) {
-        console.log('create good')
+       try {
+           console.log(req.body)
+       } catch (err) {
+           console.log(err)
+       }
     }
 
     async getAll(req, res) {
@@ -22,4 +27,4 @@ class GoodsController {
     }
 }
 
-export default GoodsController
+export default new GoodsController

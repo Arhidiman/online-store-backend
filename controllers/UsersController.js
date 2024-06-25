@@ -1,8 +1,15 @@
-import UsersModel from './models/UsersModel';
+import {usersModel} from "../models/UsersModel.js";
 
 class UsersController {
     async create(req, res) {
-        console.log('create user')
+        try {
+            console.log(req.body)
+            const {username, password} = req.body;
+            await usersModel.createUser(username, password)
+            res.status(201).send('success')
+        } catch (err) {
+            console.log(`Ошибка при создании пользователя ${err}`)
+        }
     }
 
     async getAll(req, res) {
@@ -22,4 +29,4 @@ class UsersController {
     }
 }
 
-export default UsersController
+export default new UsersController

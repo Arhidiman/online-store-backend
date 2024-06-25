@@ -1,4 +1,9 @@
+import {pool} from "../db.js";
 
-const GoodsModel = {}
+class GoodsModel {
+    async createGood () {
+        console.log('creating good')
+    }
+}
 
-export default GoodsModel
+export const goodsModel = new GoodsModel()
