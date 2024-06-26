@@ -1,9 +1,9 @@
-import Router from 'express'
-import GoodsController from "../controllers/GoodsController.js";
+import { Router } from 'express';  // Импортируем Router из express
+import GoodsController from "../controllers/GoodsController";
 
 
 
-const goodsRouter = new Router
+const goodsRouter: Router = Router();  // Создаем экземпляр Router
 
 goodsRouter.post('/goods', GoodsController.create)
 // goodsRouter.get('/goods', GoodsController.getAll)
@@ -12,3 +12,4 @@ goodsRouter.post('/goods', GoodsController.create)
 // goodsRouter.delete('/goods/:id', GoodsController.delete)
 
 export default goodsRouter
+

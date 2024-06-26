@@ -1,27 +1,16 @@
-
 {
   "compilerOptions": {
-    "target": "es6",                                  // Целевая версия JavaScript
-    "module": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],         // Библиотеки для компиляции
-    "allowJs": true,                                  // Разрешить компиляцию JavaScript файлов
-    "skipLibCheck": true,                             // Пропускать проверку типов в файлах .d.ts
-    "esModuleInterop": true,                          // Поддержка ES модуля и CommonJS
-    "allowSyntheticDefaultImports": true,             // Позволяет использовать импорт по умолчанию для модулей без дефолтного экспорта
-    "strict": true,                                   // Включение всех строгих проверок типов
-    "forceConsistentCasingInFileNames": true,         // Проверка на согласованное использование имен файлов
-    "noFallthroughCasesInSwitch": true,               // Запрещает автоматическое переход в следующий case в switch
-    "module": "esnext",                               // Системный модульный формат
-    "moduleResolution": "node",                       // Резолвинг модулей по правилам Node.js
-    "resolveJsonModule": true,                        // Поддержка импорта JSON файлов
-    "isolatedModules": true,                          // Транспиляция каждого файла по отдельности
-    "noEmit": true,                                   // Запрет на генерацию файлов .js
-    "jsx": "react-jsx"                                // Поддержка JSX синтаксиса
+    "target": "ES6",
+    "module": "commonjs",
+    "allowImportingTsExtensions": true,
+    "rootDir": "./",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node"
   },
-  "include": [
-    "src"                                             // Включение всех файлов в папке src
-  ],
-  "exclude": [
-    "node_modules"                                    // Исключение папки node_modules
-  ]
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }

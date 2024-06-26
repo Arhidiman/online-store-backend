@@ -1,8 +1,9 @@
-import {goodsModel} from "../models/GoodsModel.js";
+import {Request, Response} from 'express';
+import {goodsModel} from "../models/GoodsModel.ts";
 
 
 class GoodsController {
-    async create(req, res) {
+    async create(req: Request, res: Response) {
        try {
            console.log(req.body)
        } catch (err) {
@@ -10,19 +11,19 @@ class GoodsController {
        }
     }
 
-    async getAll(req, res) {
+    async getAll(req: Request, res: Response) {
         console.log('get all goods')
     }
 
-    async getOne(req, res) {
+    async getOne(req: Request, res: Response) {
         console.log('get one good')
     }
 
-    async update(req, res) {
+    async update(req: Request, res: Response) {
         console.log('update good')
     }
 
-    async delete(req, res) {
+    async delete(req: Request, res: Response) {
         console.log('delete good')
     }
 }
