@@ -3,11 +3,9 @@ import UsersController from "../controllers/UsersController";
 
 const usersRouter: Router = Router();  // Создаем экземпляр Router
 
-usersRouter.post('/users', UsersController.create);
-// usersRouter.get('/users', UsersController.getAll);
-// usersRouter.get('/users/:id', UsersController.getOne);
-// usersRouter.put('/users', UsersController.update);
-// usersRouter.delete('/users/:id', UsersController.delete);
-// usersRouter.post('/users/sign-in', UsersController.signIn);
+usersRouter.post('/user/sign-up', UsersController.create);
+usersRouter.post('/user/sign-in', UsersController.auth);
+usersRouter.get('/user/get', UsersController.getUser);
+
 
 export default usersRouter;
