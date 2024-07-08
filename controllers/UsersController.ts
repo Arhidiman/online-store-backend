@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import axios, {AxiosResponse} from "axios";
+import axios, {AxiosError, AxiosResponse} from "axios";
 
 const AUTH_PORT = 6000;
 const BASE_URL = 'http://localhost'
@@ -23,11 +23,20 @@ class UsersController {
             const authRes: AxiosResponse = await axios.post(userAPI.USER_SIGN_UP, data)
             const authData = authRes.data
             console.log(authData, 'response from auth service')
-            res.status(201).send('response from auth server completed successfully')
+            res.status(201).send(authData)
         } catch (err: any) {
+
+            if (axios.isAxiosError(err)) {
+                const axiosError = err as AxiosError
+                res.status(400).send(axiosError.response && axiosError.response.data)
+            } else {
+                res.status(500).send(err.message)
+            }
+
+
+            console.log(err, 'reg error')
             const errMessage = `Ошибка создания пользователя. URL: ${userAPI.USER_SIGN_UP}, method: POST ${err.message}`
-            res.status(402).send(errMessage)
-            console.log(errMessage)
+            console.log(err.response.data, 'err data')
         }
     }
 
