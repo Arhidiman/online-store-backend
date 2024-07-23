@@ -3,7 +3,7 @@ import {Request, Response} from "express";
 import axios, {AxiosResponse} from 'axios'
 
 const cors = require('cors')
-import goodsRouter from "./router/goodsRouter";
+import productsRouter from "./router/productsRouter";
 import usersRouter from './router/usersRouter';
 
 
@@ -14,7 +14,7 @@ const AUTH_PORT = 6000;
 
 app.use(express.json());
 app.use(cors());
-app.use('/api', goodsRouter);
+app.use('/api', productsRouter);
 app.use('/api', usersRouter);
 
 const BASE_URL = 'http://localhost'

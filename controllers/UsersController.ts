@@ -12,9 +12,6 @@ const userAPI = {
 }
 
 
-
-
-
 class UsersController {
     async create(req: Request, res: Response) {
         try {
