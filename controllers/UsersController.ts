@@ -31,9 +31,9 @@ class UsersController {
             }
 
 
-            console.log(err, 'reg error')
-            const errMessage = `Ошибка создания пользователя. URL: ${userAPI.USER_SIGN_UP}, method: POST ${err.message}`
-            console.log(err.response.data, 'err data')
+            console.log(err.message, 'reg error')
+            // const errMessage = `Ошибка создания пользователя. URL: ${userAPI.USER_SIGN_UP}, method: POST ${err.message}`
+            // console.log(err.response.data, 'err data')
         }
     }
 
