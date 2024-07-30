@@ -1,19 +1,15 @@
 import {Request, Response} from 'express';
-import {productsModel} from "../models/productsModel.ts";
+import {productsModel} from "../models/productsModel/productsModel.ts";
 
 
 class ProductsController {
     async getAll(req: Request, res: Response) {
         try {
-
             const filterParameters = req.body
-            const productsData = await productsModel.getAll(filterParameters)
-            // console.log(req.body, 'req data')
-            // console.log(productsData, 'roducts data')
+            const productsData = await productsModel.getByFilters(filterParameters)
             res.status(200).json(productsData)
-
         } catch (err: any) {
-            console.log(err.message)
+            res.status(500).json(err.message)
         }
     }
 

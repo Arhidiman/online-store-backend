@@ -9,10 +9,10 @@ import usersRouter from './router/usersRouter';
 
 const app = express();
 const MAIN_PORT = 5000;
-const AUTH_PORT = 6000;
-
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(cors());
 app.use('/api', productsRouter);
 app.use('/api', usersRouter);
