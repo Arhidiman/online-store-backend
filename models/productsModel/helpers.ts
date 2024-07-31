@@ -20,7 +20,7 @@ export const getFiltersCondition = (filtersData: IFiltersParameters) => {
     const {priceMax, options: filtersOptions} = filtersData.filters
     const {options: sortersOptions} = filtersData.sorters
 
-    if (!priceMax && filtersOptions.length === 0) return undefined
+    if (!priceMax && filtersOptions.length === 0 && sortersOptions.length === 0) return ''
 
     const priceCondition = priceMax && `price < ${priceMax}`
     const filtersCondition = generateStringCondition(filtersOptions, 'is not null', ' and ')

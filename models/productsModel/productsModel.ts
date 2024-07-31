@@ -14,11 +14,15 @@ interface IFiltersParameters {
 class ProductsModel {
     async getByFilters (filterParameters: IFiltersParameters) {
 
+
+        console.log(filterParameters)
         const totalCondition = getFiltersCondition(filterParameters)
 
         const query= () => `
             select * from products where ${totalCondition}
         `
+
+        console.log(query(), 'quety')
         try {            
             const dbResponse = await pool.query(query())
             return dbResponse.rows
