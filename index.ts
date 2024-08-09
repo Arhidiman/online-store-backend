@@ -1,10 +1,9 @@
 const express = require('express')
-import {Request, Response} from "express";
-import axios, {AxiosResponse} from 'axios'
-
 const cors = require('cors')
+
 import productsRouter from "./router/productsRouter";
 import usersRouter from './router/usersRouter';
+import { categoriesRouter } from "./router/categoriesRouter";
 
 
 const app = express();
@@ -16,8 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use('/api', productsRouter);
 app.use('/api', usersRouter);
-
-const BASE_URL = 'http://localhost'
+app.use('/api', categoriesRouter);
 
 
 const startApp = async () => {

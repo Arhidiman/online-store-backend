@@ -20,7 +20,7 @@ class ProductsModel {
             select * from products ${totalCondition ? 'where'+ totalCondition : ''}
         `
 
-        console.log(query(), 'query')
+        // console.log(query(), 'query')
 
         try {            
             const dbResponse = await pool.query(query())
